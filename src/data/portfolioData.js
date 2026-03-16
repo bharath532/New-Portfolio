@@ -99,7 +99,7 @@ export const projects = [
     tags:        ['HTML5', 'CSS3', 'JavaScript', 'Axios'],
     tags2:       ['Netlify', 'Google Apps Script'],
     github:      'https://github.com/bharath532',
-    live:        'https://bharath-portfolios.netlify.app/',
+    live:        'https://bharathportfollio.netlify.app/',
   },
   
 ]
