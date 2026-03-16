@@ -1,0 +1,186 @@
+/* Projects.module.css */
+
+.list {
+  display:        flex;
+  flex-direction: column;
+  gap:            1.5rem;
+}
+
+/* ── Card ── */
+.card {
+  position:   relative;
+  padding:    2.25rem;
+  overflow:   hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card.cardHovered {
+  transform:  translateY(-5px);
+  box-shadow: 0 16px 56px rgba(124, 58, 237, 0.22);
+}
+
+/* Top shimmer line on hover */
+.shimmerLine {
+  position:   absolute;
+  top:        0;
+  left:       0;
+  right:      0;
+  height:     1px;
+  background: linear-gradient(90deg, transparent, var(--a1), var(--a3), transparent);
+  opacity:    0;
+  transition: opacity 0.3s ease;
+}
+
+.shimmerLine.shimmerLineVisible {
+  opacity: 1;
+}
+
+/* ── Header ── */
+.header {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     flex-start;
+  gap:             1rem;
+  margin-bottom:   0.85rem;
+}
+
+.projectNum {
+  font-family:    'JetBrains Mono', monospace;
+  font-size:      0.7rem;
+  color:          var(--muted2);
+  margin-bottom:  0.3rem;
+}
+
+.title {
+  font-size:               1.15rem;
+  font-weight:             700;
+  letter-spacing:          -0.01em;
+  background:              linear-gradient(120deg, var(--text), rgba(242, 240, 255, 0.75));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+  margin:                  0;
+}
+
+/* Badge */
+.badge {
+  display:         flex;
+  align-items:     center;
+  gap:             0.4rem;
+  padding:         0.3rem 0.85rem;
+  border-radius:   100px;
+  border:          1px solid var(--border);
+  background:      rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  font-size:       0.7rem;
+  color:           var(--muted);
+  white-space:     nowrap;
+  flex-shrink:     0;
+}
+
+.badgeDot {
+  width:        6px;
+  height:       6px;
+  border-radius: 50%;
+  background:   var(--a2);
+  box-shadow:   0 0 6px var(--a2);
+  flex-shrink:  0;
+}
+
+/* ── Description ── */
+.description {
+  font-size:     0.88rem;
+  color:         var(--muted);
+  line-height:   1.85;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Tags ── */
+.tags {
+  display:       flex;
+  flex-wrap:     wrap;
+  gap:           0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.tagPrimary {
+  font-family:   'JetBrains Mono', monospace;
+  font-size:     0.7rem;
+  padding:       0.25rem 0.7rem;
+  border-radius: 100px;
+  border:        1px solid rgba(180, 142, 255, 0.22);
+  background:    rgba(180, 142, 255, 0.07);
+  color:         var(--a1);
+}
+
+.tagSecondary {
+  font-family:   'JetBrains Mono', monospace;
+  font-size:     0.7rem;
+  padding:       0.25rem 0.7rem;
+  border-radius: 100px;
+  border:        1px solid rgba(78, 255, 212, 0.22);
+  background:    rgba(78, 255, 212, 0.07);
+  color:         var(--a2);
+}
+
+/* ── Links ── */
+.links {
+  display:   flex;
+  gap:       0.7rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  display:         flex;
+  align-items:     center;
+  gap:             0.4rem;
+  padding:         0.38rem 1rem;
+  border-radius:   8px;
+  font-size:       0.78rem;
+  font-weight:     500;
+  backdrop-filter: blur(6px);
+  text-decoration: none;
+  transition:      all 0.2s ease;
+}
+
+/* GitHub variant */
+.link_github {
+  color:      var(--a1);
+  border:     1px solid rgba(180, 142, 255, 0.25);
+  background: rgba(180, 142, 255, 0.04);
+}
+
+.link_github.linkHovered {
+  background:  rgba(180, 142, 255, 0.12);
+  box-shadow:  0 0 16px rgba(180, 142, 255, 0.3);
+  border-color: var(--a1);
+}
+
+/* Live variant */
+.link_live {
+  color:      var(--a2);
+  border:     1px solid rgba(78, 255, 212, 0.25);
+  background: rgba(78, 255, 212, 0.04);
+}
+
+.link_live.linkHovered {
+  background:  rgba(78, 255, 212, 0.12);
+  box-shadow:  0 0 16px rgba(78, 255, 212, 0.3);
+  border-color: var(--a2);
+}
+
+/* Responsive */
+@media (max-width: 560px) {
+  .header {
+    flex-direction: column;
+  }
+}
+
+/* ── Additional mobile breakpoints ── */
+@media (max-width: 480px) {
+  .card        { padding: 1.5rem; }
+  .title       { font-size: 1rem; }
+  .description { font-size: 0.84rem; }
+  .tagPrimary,
+  .tagSecondary { font-size: 0.65rem; padding: 0.2rem 0.55rem; }
+}

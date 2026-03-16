@@ -1,0 +1,340 @@
+/* Hero.module.css */
+
+/* ── Layout ── */
+.hero {
+  min-height: 92vh;
+  display:        flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:    5rem 2.5rem;
+  max-width:  1100px;
+  margin:     0 auto;
+  position:   relative;
+  z-index:    1;
+}
+
+.inner {
+  display:         grid;
+  grid-template-columns: 1fr auto;
+  gap:             4rem;
+  align-items:     center;
+}
+
+.content {
+  display:        flex;
+  flex-direction: column;
+}
+
+/* ── Eyebrow ── */
+.eyebrow {
+  display:     flex;
+  align-items: center;
+  gap:         0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.statusDot {
+  width:        7px;
+  height:       7px;
+  border-radius: 50%;
+  background:   var(--a2);
+  box-shadow:   0 0 8px var(--a2), 0 0 16px var(--a2);
+  animation:    pulse-dot 2s infinite;
+  flex-shrink:  0;
+}
+
+.eyebrowLine {
+  width:      40px;
+  height:     1px;
+  background: linear-gradient(90deg, var(--a2), transparent);
+  flex-shrink: 0;
+}
+
+.eyebrowText {
+  font-family:    'JetBrains Mono', monospace;
+  font-size:      0.78rem;
+  color:          var(--a2);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ── Name Block ── */
+.nameBlock {
+  margin-bottom: 1.5rem;
+}
+
+.nameHello {
+  display:        block;
+  font-family:    'JetBrains Mono', monospace;
+  font-size:      0.8rem;
+  color:          var(--muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom:  0.4rem;
+}
+
+.name {
+  font-size:       clamp(3.2rem, 7vw, 5.8rem);
+  font-weight:     800;
+  line-height:     1.0;
+  letter-spacing:  -0.04em;
+  margin:          0;
+}
+
+.nameB {
+  background:              linear-gradient(135deg, #fff, var(--a1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+}
+
+.nameHarath {
+  background:              linear-gradient(135deg, var(--a1) 0%, var(--a3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+}
+
+.nameS {
+  background:              linear-gradient(135deg, var(--a3), var(--a2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip:         text;
+}
+
+.nameUnderline {
+  height:      3px;
+  width:       70%;
+  background:  linear-gradient(90deg, var(--a1), var(--a3), var(--a2), transparent);
+  border-radius: 100px;
+  margin-top:  0.5rem;
+  animation:   shimmer-line 3s ease-in-out infinite;
+}
+
+/* ── Role Typewriter ── */
+.roleRow {
+  display:     flex;
+  align-items: center;
+  gap:         0.5rem;
+  font-size:   clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  color:       var(--muted);
+  margin-bottom: 1.75rem;
+}
+
+.rolePrefix {
+  font-family: 'JetBrains Mono', monospace;
+  color:       var(--a2);
+  font-weight: 400;
+}
+
+.roleText {
+  color:       var(--text);
+  font-weight: 600;
+}
+
+.cursor {
+  color:     var(--a1);
+  font-weight: 300;
+  animation: blink 1s step-end infinite;
+}
+
+/* ── Bio ── */
+.bio {
+  font-size:     0.98rem;
+  color:         var(--muted);
+  max-width:     520px;
+  margin-bottom: 2.5rem;
+  line-height:   1.95;
+}
+
+/* ── Buttons ── */
+.buttons {
+  display:   flex;
+  gap:       1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display:        inline-flex;
+  align-items:    center;
+  gap:            0.5rem;
+  padding:        0.85rem 2rem;
+  border-radius:  14px;
+  font-family:    'Syne', sans-serif;
+  font-size:      0.9rem;
+  font-weight:    600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition:     all 0.25s ease;
+  cursor:         pointer;
+  border:         none;
+}
+
+.btnNeon {
+  background: linear-gradient(135deg, #7c3aed, #be185d);
+  color:      #fff;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.45),
+              0 0 60px rgba(124, 58, 237, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.btnNeon:hover {
+  box-shadow:  0 0 32px rgba(124, 58, 237, 0.7),
+               0 0 80px rgba(124, 58, 237, 0.25);
+  transform:   translateY(-3px);
+}
+
+.btnGlass {
+  background:      rgba(255, 255, 255, 0.04);
+  color:           var(--text);
+  border:          1px solid var(--border2) !important;
+  backdrop-filter: blur(12px);
+}
+
+.btnGlass:hover {
+  background:  rgba(180, 142, 255, 0.1);
+  border-color: var(--a1) !important;
+  color:       var(--a1);
+  transform:   translateY(-3px);
+}
+
+.btnResume {
+  background:      rgba(78, 255, 212, 0.07);
+  color:           var(--a2);
+  border:          1px solid rgba(78, 255, 212, 0.35) !important;
+  backdrop-filter: blur(12px);
+}
+
+.btnResume:hover {
+  background: rgba(78, 255, 212, 0.14);
+  transform:  translateY(-3px);
+  box-shadow: 0 0 20px rgba(78, 255, 212, 0.25);
+}
+
+/* ── Photo ── */
+.photoSide {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+}
+
+.photoWrap {
+  position:     relative;
+  width:        260px;
+  height:       260px;
+  flex-shrink:  0;
+}
+
+.ringOuter {
+  position:      absolute;
+  inset:         -4px;
+  border-radius: 50%;
+  background:    linear-gradient(135deg, var(--a1), var(--a3), var(--a2));
+  animation:     spin-ring 6s linear infinite;
+}
+
+.ringGlow {
+  position:      absolute;
+  inset:         -8px;
+  border-radius: 50%;
+  background:    linear-gradient(135deg, var(--a2), var(--a1), var(--a3));
+  opacity:       0.4;
+  animation:     spin-ring 10s linear infinite reverse;
+  filter:        blur(4px);
+}
+
+.photo {
+  position:       absolute;
+  inset:          3px;
+  width:          calc(100% - 6px);
+  height:         calc(100% - 6px);
+  border-radius:  50%;
+  object-fit:     cover;
+  object-position: center top;
+  z-index:        1;
+  border:         3px solid rgba(5, 5, 16, 0.8);
+}
+
+.photoBadge {
+  position:        absolute;
+  bottom:          -12px;
+  left:            50%;
+  transform:       translateX(-50%);
+  display:         flex;
+  align-items:     center;
+  gap:             0.5rem;
+  padding:         0.35rem 1rem;
+  border-radius:   100px;
+  background:      rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border:          1px solid rgba(78, 255, 212, 0.4);
+  font-family:     'JetBrains Mono', monospace;
+  font-size:       0.72rem;
+  color:           var(--a2);
+  letter-spacing:  0.08em;
+  white-space:     nowrap;
+  z-index:         2;
+}
+
+.photoBadgeDot {
+  width:        6px;
+  height:       6px;
+  border-radius: 50%;
+  background:   var(--a2);
+  box-shadow:   0 0 6px var(--a2);
+  animation:    pulse-dot 2s infinite;
+  flex-shrink:  0;
+}
+
+/* ── Scroll Hint ── */
+.scrollHint {
+  position:        absolute;
+  bottom:          2.5rem;
+  left:            50%;
+  transform:       translateX(-50%);
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  gap:             0.5rem;
+}
+
+.scrollLine {
+  width:      1px;
+  height:     48px;
+  background: linear-gradient(to bottom, var(--a1), transparent);
+  animation:  scroll-line 1.8s ease-in-out infinite;
+}
+
+.scrollLabel {
+  font-family:    'JetBrains Mono', monospace;
+  font-size:      0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--muted2);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .photoSide {
+    display: none;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+}
+
+/* ── Additional mobile breakpoints ── */
+@media (max-width: 480px) {
+  .hero      { padding: 3rem 1.25rem; min-height: 85vh; }
+  .nameBlock { margin-bottom: 1rem; }
+  .bio       { font-size: 0.9rem; margin-bottom: 2rem; }
+  .buttons   { flex-direction: column; }
+  .btn       { justify-content: center; text-align: center; }
+  .scrollHint { display: none; }
+}

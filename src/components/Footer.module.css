@@ -1,0 +1,17 @@
+/* Footer.module.css */
+
+.footer {
+  position:       relative;
+  z-index:        1;
+  border-top:     1px solid var(--border);
+  padding:        2rem;
+  text-align:     center;
+  font-family:    'JetBrains Mono', monospace;
+  font-size:      0.75rem;
+  color:          var(--muted2);
+  letter-spacing: 0.05em;
+}
+
+.accent {
+  color: var(--a1);
+}

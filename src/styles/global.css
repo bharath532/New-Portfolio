@@ -1,0 +1,172 @@
+/* ─────────────────────────────────────────────────
+   GLOBAL STYLES
+   bharath-portfolio / styles/global.css
+───────────────────────────────────────────────── */
+
+/* CSS Variables */
+:root {
+  --bg:       #050510;
+  --bg2:      #0d0d1a;
+  --text:     #f2f0ff;
+  --muted:    #8880bb;
+  --muted2:   #5550aa;
+  --a1:       #b48eff;   /* purple  */
+  --a2:       #4effd4;   /* teal    */
+  --a3:       #ff6eb4;   /* pink    */
+  --a4:       #ffb347;   /* orange  */
+  --border:   rgba(180, 142, 255, 0.14);
+  --border2:  rgba(180, 142, 255, 0.28);
+  --glass:    rgba(255, 255, 255, 0.04);
+  --glass2:   rgba(255, 255, 255, 0.08);
+  --radius:   20px;
+  --radius-sm: 12px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Keyframe Animations ── */
+@keyframes drift {
+  0%,  100% { transform: translate(0, 0)     scale(1);    }
+  33%        { transform: translate(30px, -40px) scale(1.06); }
+  66%        { transform: translate(-20px, 25px) scale(0.96); }
+}
+
+@keyframes pulse-dot {
+  0%,  100% { opacity: 1;   box-shadow: 0 0 8px var(--a2), 0 0 16px var(--a2); }
+  50%        { opacity: 0.5; box-shadow: 0 0 4px var(--a2); }
+}
+
+@keyframes blink {
+  0%,  100% { opacity: 1; }
+  50%        { opacity: 0; }
+}
+
+@keyframes scroll-line {
+  0%   { opacity: 0; transform: scaleY(0);    transform-origin: top; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; transform: scaleY(1);    transform-origin: top; }
+}
+
+@keyframes spin-ring {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes shimmer-line {
+  0%,  100% { opacity: 1;   transform: scaleX(1);    }
+  50%        { opacity: 0.5; transform: scaleX(0.8);  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ── Utility Classes ── */
+.glass {
+  background:       var(--glass);
+  backdrop-filter:  blur(24px);
+  border:           1px solid var(--border);
+  border-radius:    var(--radius);
+}
+
+.glass-strong {
+  background:       var(--glass2);
+  backdrop-filter:  blur(32px);
+  border:           1px solid var(--border2);
+  border-radius:    var(--radius);
+}
+
+/* Section layout */
+.section {
+  padding:    6rem 2.5rem;
+  max-width:  980px;
+  margin:     0 auto;
+  position:   relative;
+  z-index:    1;
+}
+
+.section-tag {
+  display:         flex;
+  align-items:     center;
+  gap:             0.6rem;
+  font-family:     'JetBrains Mono', monospace;
+  font-size:       0.72rem;
+  color:           var(--a1);
+  letter-spacing:  0.2em;
+  text-transform:  uppercase;
+  margin-bottom:   0.6rem;
+}
+
+.section-tag::before {
+  content:     '';
+  display:     inline-block;
+  width:       24px;
+  height:      1px;
+  background:  var(--a1);
+  box-shadow:  0 0 6px var(--a1);
+}
+
+.section-title {
+  font-size:       2.2rem;
+  font-weight:     700;
+  letter-spacing:  -0.03em;
+  color:           var(--text);
+  margin-bottom:   3.5rem;
+}
+
+/* Fade-in on scroll (JS adds .visible class) */
+.fade-up {
+  opacity:    0;
+  transform:  translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-up.visible {
+  opacity:    1;
+  transform:  translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}

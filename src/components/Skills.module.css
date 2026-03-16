@@ -1,0 +1,130 @@
+/* Skills.module.css */
+
+/* ── Skill Bars ── */
+.bars {
+  display:        flex;
+  flex-direction: column;
+  gap:            1rem;
+  margin-bottom:  3rem;
+}
+
+.barRow {
+  display:               grid;
+  grid-template-columns: 120px 1fr 38px;
+  align-items:           center;
+  gap:                   1.25rem;
+}
+
+.barName {
+  font-size:   0.85rem;
+  font-weight: 500;
+  color:       var(--text);
+}
+
+.barTrack {
+  height:        4px;
+  border-radius: 100px;
+  background:    rgba(255, 255, 255, 0.06);
+  overflow:      visible;
+  position:      relative;
+}
+
+.barFill {
+  height:        4px;
+  border-radius: 100px;
+  background:    linear-gradient(90deg, var(--a1), var(--a3));
+  transition:    width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position:      relative;
+}
+
+/* Glowing tip dot */
+.barTip {
+  position:      absolute;
+  right:         -1px;
+  top:           50%;
+  transform:     translateY(-50%);
+  width:         8px;
+  height:        8px;
+  border-radius: 50%;
+  background:    var(--a3);
+  box-shadow:    0 0 8px var(--a3), 0 0 16px var(--a3);
+  display:       block;
+}
+
+.barPct {
+  font-family:    'JetBrains Mono', monospace;
+  font-size:      0.7rem;
+  color:          var(--muted);
+  text-align:     right;
+}
+
+/* ── Categories ── */
+.categories {
+  display:        flex;
+  flex-direction: column;
+  gap:            2.25rem;
+}
+
+.category {
+  /* fade-up handled by global utility class */
+}
+
+.catHeader {
+  display:     flex;
+  align-items: center;
+  gap:         0.75rem;
+  margin-bottom: 1.1rem;
+}
+
+.catName {
+  font-family:    'JetBrains Mono', monospace;
+  font-size:      0.72rem;
+  color:          var(--a2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space:    nowrap;
+}
+
+.catLine {
+  flex:       1;
+  height:     1px;
+  background: linear-gradient(90deg, rgba(78, 255, 212, 0.3), transparent);
+}
+
+/* ── Pills ── */
+.pills {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       0.6rem;
+}
+
+.pill {
+  display:         inline-block;
+  padding:         0.5rem 1rem;
+  border-radius:   100px;
+  font-size:       0.8rem;
+  font-weight:     500;
+  backdrop-filter: blur(8px);
+  transition:      all 0.2s ease;
+  cursor:          default;
+  /* color, border, background set inline via JS */
+}
+
+/* Responsive */
+@media (max-width: 560px) {
+  .barRow {
+    grid-template-columns: 90px 1fr 32px;
+    gap: 0.75rem;
+  }
+
+  .barName {
+    font-size: 0.78rem;
+  }
+}
+
+/* ── Additional mobile breakpoints ── */
+@media (max-width: 480px) {
+  .barRow  { grid-template-columns: 80px 1fr 28px; gap: 0.6rem; }
+  .barName { font-size: 0.75rem; }
+  .pill    { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+}
