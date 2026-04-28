@@ -10,7 +10,7 @@ export default function Footer() {
       Designed &amp; Built by{' '}
       <span className={styles.accent}>Bharath S</span>
       &nbsp;·&nbsp;
-      2025
+      2026
       &nbsp;·&nbsp;
       Erode, Tamil Nadu
     </footer>

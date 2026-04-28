@@ -34,6 +34,7 @@ export const stats = [
   { value: 'N5',   label: 'JLPT Prep 🇯🇵'  },
 ]
 
+
 export const experience = [
   {
     company:   'IDM Tech Park',
