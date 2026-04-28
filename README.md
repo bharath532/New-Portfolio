@@ -110,7 +110,7 @@ Or connect your GitHub repo for automatic deploys on every push.
 
 | Tool          | Purpose                     |
 |---------------|-----------------------------|
-| React 18      | UI framework                |
+| React 19      | UI framework                |
 | Vite          | Build tool & dev server     |
 | CSS Modules   | Scoped component styles     |
 | IntersectionObserver | Scroll-triggered animations |
